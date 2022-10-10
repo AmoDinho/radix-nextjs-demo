@@ -3,7 +3,7 @@ import * as RadixTabs from '@radix-ui/react-tabs';
 
 const Tabs = ({ tabPayload }) => {
   return (
-    <RadixTabs.Root defaultValue="sign">
+    <RadixTabs.Root defaultValue={tabPayload[0].keyName}>
       <RadixTabs.List>
         {tabPayload.map((tabItem, tabIndex) => (
           <div key={tabIndex}>
@@ -13,6 +13,13 @@ const Tabs = ({ tabPayload }) => {
           </div>
         ))}
       </RadixTabs.List>
+      {tabPayload.map((tabItem, tabIndex) => (
+        <div key={tabIndex}>
+          <RadixTabs.Content value={tabItem.keyName}>
+            <p style={{ color: 'white' }}>{tabItem.content}</p>
+          </RadixTabs.Content>
+        </div>
+      ))}
     </RadixTabs.Root>
   );
 };

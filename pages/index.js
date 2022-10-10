@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Tabs from '../components/ui/Tabs';
+import { tabPayload } from '../components/utils/TabUtils';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -11,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Tabs />
+        <Tabs tabPayload={tabPayload} />
       </main>
     </div>
   );
